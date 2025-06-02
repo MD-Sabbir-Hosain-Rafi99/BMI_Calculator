@@ -23,12 +23,24 @@ calculateBtn.addEventListener('click', () =>{
     bmiDisplay.innerHTML = bmi.toFixed(2);
     let bmiFinalOutput = parseFloat(bmiDisplay.innerHTML);
     if (bmiFinalOutput < 18.5) {
+        lalColor.classList.add("hidden");
+        holudColor.classList.add("hidden");
+        sobujColor.classList.add("hidden");
         ashColor.classList.remove("hidden"); 
-    } else if (bmiFinalOutput >= 18.5 && bmiFinalOutput <= 24.9) {
+    }else if (bmiFinalOutput >= 18.5 && bmiFinalOutput <= 24.9) {
+        ashColor.classList.add("hidden");
+        lalColor.classList.add("hidden");
+        holudColor.classList.add("hidden");
         sobujColor.classList.remove("hidden");
     }else if (bmiFinalOutput >= 25 && bmiFinalOutput <= 29.9) {
+        ashColor.classList.add("hidden");
+        sobujColor.classList.add("hidden");
+        lalColor.classList.add("hidden");
         holudColor.classList.remove("hidden");
-    }else if (bmiFinalOutput >= 30) {
+    }else if (bmiFinalOutput > 30) {
+        ashColor.classList.add("hidden");
+        sobujColor.classList.add("hidden");
+        holudColor.classList.add("hidden");
         lalColor.classList.remove("hidden");
     }
 })
